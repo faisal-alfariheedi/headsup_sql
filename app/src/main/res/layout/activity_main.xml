@@ -7,9 +7,13 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <EditText
             android:id="@+id/edcelep"
@@ -25,7 +29,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="taboo1"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:minHeight="48dp" />
 
         <EditText
             android:id="@+id/edtb2"
@@ -33,7 +38,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="taboo2"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:minHeight="48dp" />
 
         <EditText
             android:id="@+id/edtb3"
@@ -41,7 +47,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="taboo3"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:minHeight="48dp" />
 
         <Button
             android:id="@+id/add"
@@ -49,4 +56,13 @@
             android:layout_height="wrap_content"
             android:text="add" />
     </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvm"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>
