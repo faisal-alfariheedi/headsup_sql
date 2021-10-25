@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         init()
         add.setOnClickListener{
             if(edn.text.isNotEmpty()&&edt1.text.isNotEmpty()&&edt2.text.isNotEmpty()&&edt3.text.isNotEmpty()){
-                var st=dbh.addnote(edn.text.toString(),edt1.text.toString(),edt2.text.toString(),edt3.text.toString())
+                var st=dbh.addceleb(edn.text.toString(),edt1.text.toString(),edt2.text.toString(),edt3.text.toString())
                 Toast.makeText(this,"note saved in row$st", Toast.LENGTH_SHORT).show()
                 setuprvdata()
             }
@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         dbh =Dbhelper(this)
         setuprvdata()
     }
-    private fun setuprvdata() {
+    fun setuprvdata() {
         var list=dbh.getall()
         rv.adapter=RVAdapter(list,this)
         rv.layoutManager= LinearLayoutManager(this)

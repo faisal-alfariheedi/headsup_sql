@@ -5,7 +5,6 @@ import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.telecom.Call
 import android.view.Menu
 import android.view.MenuItem
 import android.view.Surface
@@ -24,7 +23,7 @@ class Game : AppCompatActivity() {
     lateinit var btStart: Button
     lateinit var dbh: Dbhelper
     var gameActive = false
-    var cel = arrayListOf<celeb>()
+    var cel = arrayListOf<Celeb>()
     var celeb = 0
     lateinit var time : CountDownTimer
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -140,7 +139,7 @@ class Game : AppCompatActivity() {
     /////////// data guardian from the rotation monster
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        var cel = arrayListOf<celeb>()
+        var cel = arrayListOf<Celeb>()
         outState.putInt("celeb", celeb)
         outState.putBoolean("gameactive",gameActive)
         for (i in cel){
@@ -157,7 +156,7 @@ class Game : AppCompatActivity() {
         super.onRestoreInstanceState(savedInstanceState)
         celeb= savedInstanceState.getInt("celeb")
         gameActive=savedInstanceState.getBoolean("gameactive")
-        var obj=celeb("","","","")
+        var obj=Celeb("","","","","")
         var n=0
         for (i in 0 until savedInstanceState.getInt("celsize")) {
             n = i
